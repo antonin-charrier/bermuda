@@ -2,8 +2,11 @@ package com.ourakoz.bermuda
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.widget.Button
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.activity_main.*
 import java.time.LocalDateTime
 import java.util.*
 
@@ -85,12 +88,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var favBtn = findViewById<Button>(R.id.fav)
-        favBtn.setOnClickListener({ v -> artists.first { a -> a.name == "testArtist1" }.toggleFavorite() })
-    }
+        rv_artists.layoutManager = LinearLayoutManager(this)
 
-    fun Artist.toggleFavorite() {
-        if (this.dateFavorite == null ) this.dateFavorite = LocalDateTime.now() else this.dateFavorite = null
+        rv_artists.adapter = ArtistsAdapter(artists, this)
     }
 }
 
