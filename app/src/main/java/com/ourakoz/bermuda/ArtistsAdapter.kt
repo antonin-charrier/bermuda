@@ -16,7 +16,7 @@ class ArtistsAdapter(val artists: Array<Artist>, val context: Context) : Recycle
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder?.tvArtistType?.text = artists.elementAt(position).name
-        holder?.tvArtistFav?.setOnClickListener({ v ->
+        holder?.tvArtistsClick?.setOnClickListener({ v ->
             run {
                 artists.first { a -> a.name == holder?.tvArtistType?.text }.toggleFavorite(holder?.tvArtistFav)
             }
@@ -42,4 +42,5 @@ class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
     // Holds the TextView that will add each animal to
     val tvArtistType = view.artist_name
     val tvArtistFav = view.fav
+    val tvArtistsClick = view.clickable
 }
