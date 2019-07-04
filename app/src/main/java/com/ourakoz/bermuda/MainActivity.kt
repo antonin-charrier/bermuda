@@ -10,15 +10,74 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
     val genres: Array<Genre> = arrayOf(
-        Genre("testGenre1"),
-        Genre("testGenre2")
+        Genre("Heavy Metal"),
+        Genre("Metal"),
+        Genre("Trash Metal"),
+        Genre("Fusion"),
+        Genre("Alternative Rock"),
+        Genre("Neo Metal"),
+        Genre("Indus Metal"),
+        Genre("Progressif"),
+        Genre("Groove Metal")
     )
     val artists: Array<Artist> = arrayOf(
-        Artist("testArtist1", arrayListOf(
-            genres.first { g -> g.name == "testGenre1" }
+        Artist("Metallica", arrayListOf(
+            genres.first { g -> g.name == "Heavy Metal" },
+            genres.first { g -> g.name == "Metal" },
+            genres.first { g -> g.name == "Trash Metal" }
         ), null),
-        Artist("testArtist1", arrayListOf(
-            genres.first { g -> g.name == "testGenre2" }
+        Artist("System Of A Down", arrayListOf(
+            genres.first { g -> g.name == "Alternative Rock" },
+            genres.first { g -> g.name == "Fusion" },
+            genres.first { g -> g.name == "Metal" }
+        ), null),
+        Artist("Korn", arrayListOf(
+            genres.first { g -> g.name == "Neo Metal" }
+        ), null),
+        Artist("Slipknot", arrayListOf(
+            genres.first { g -> g.name == "Neo Metal" },
+            genres.first { g -> g.name == "Metal" }
+        ), null),
+        Artist("Rammstein", arrayListOf(
+            genres.first { g -> g.name == "Indus Metal" }
+        ), null),
+        Artist("Deftones", arrayListOf(
+            genres.first { g -> g.name == "Metal" },
+            genres.first { g -> g.name == "Alternative Rock" },
+            genres.first { g -> g.name == "Neo Metal" },
+            genres.first { g -> g.name == "Rock" }
+        ), null),
+        Artist("Rage Against The Machin", arrayListOf(
+            genres.first { g -> g.name == "Fusion" }
+        ), null),
+        Artist("Tool", arrayListOf(
+            genres.first { g -> g.name == "Metal" },
+            genres.first { g -> g.name == "Progressif" }
+        ), null),
+        Artist("Machine Head", arrayListOf(
+            genres.first { g -> g.name == "Groove Metal" },
+            genres.first { g -> g.name == "Metal" },
+            genres.first { g -> g.name == "Trash Metal" }
+        ), null),
+        Artist("Slayer", arrayListOf(
+            genres.first { g -> g.name == "Trash Metal" }
+        ), null),
+        Artist("Pantera", arrayListOf(
+            genres.first { g -> g.name == "Groove Metal" }
+        ), null),
+        Artist("Sepultura", arrayListOf(
+            genres.first { g -> g.name == "Groove Metal" },
+            genres.first { g -> g.name == "Metal" },
+            genres.first { g -> g.name == "Trash metal" }
+        ), null),
+        Artist("Iron Maiden", arrayListOf(
+            genres.first { g -> g.name == "Heavy Metal" },
+            genres.first { g -> g.name == "Progressif" }
+        ), null),
+        Artist("Marilyn Manson", arrayListOf(
+            genres.first { g -> g.name == "Indus Metal" },
+            genres.first { g -> g.name == "Metal" },
+            genres.first { g -> g.name == "Rock" }
         ), null)
     )
 
