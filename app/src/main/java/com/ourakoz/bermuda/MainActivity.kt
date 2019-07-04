@@ -10,6 +10,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.time.LocalDateTime
 import java.util.*
 import kotlin.collections.ArrayList
+import android.R
+import android.view.Menu
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -93,6 +96,11 @@ class MainActivity : AppCompatActivity() {
         rv_artists.layoutManager = LinearLayoutManager(this)
 
         rv_artists.adapter = ArtistsAdapter(artists, this)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.fav, menu)
+        return true
     }
 
     fun refreshSuggestions() {
