@@ -1,11 +1,10 @@
 package com.ourakoz.bermuda
 
-import android.provider.MediaStore
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_artist.view.*
 import java.time.LocalDateTime
@@ -28,13 +27,13 @@ class ArtistsAdapter(val artists: Array<Artist>, val context: Context) : Recycle
         return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_artist, parent, false))
     }
 
-    fun Artist.toggleFavorite(tv: TextView) {
+    fun Artist.toggleFavorite(iv: ImageView) {
         if (this.dateFavorite == null ) {
             this.dateFavorite = LocalDateTime.now()
-            tv.setText(R.string.remove_from_fav)
+            iv.setImageResource(R.drawable.star_empty)
         } else {
             this.dateFavorite = null
-            tv.setText(R.string.add_to_fav)
+            iv.setImageResource(R.drawable.star_full)
         }
     }
 }

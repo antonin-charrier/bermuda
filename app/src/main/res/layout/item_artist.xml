@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:orientation="horizontal"
               android:padding="16dp">
@@ -9,11 +9,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="20sp"
     />
-    <Button
+    <ImageView
             android:id="@+id/fav"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/add_to_fav"
-    />
+            android:layout_width="24dp"
+            android:layout_height="24dp" app:srcCompat="@drawable/star_empty"/>
 </LinearLayout>
