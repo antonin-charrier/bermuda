@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Bermuda</string>
+    <string name="add_to_fav">Add to favorites</string>
+    <string name="remove_from_fav">Remove from favorites</string>
 </resources>

@@ -22,7 +22,8 @@ class MainActivity : AppCompatActivity() {
         Genre("Neo Metal"),
         Genre("Indus Metal"),
         Genre("Progressive"),
-        Genre("Groove Metal")
+        Genre("Groove Metal"),
+        Genre("Rock")
     )
     val artists: Array<Artist> = arrayOf(
         Artist("Metallica", arrayListOf(
@@ -51,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             genres?.first { g -> g.name == "Neo Metal" },
             genres?.first { g -> g.name == "Rock" }
         ), null),
-        Artist("Rage Against The Machin", arrayListOf(
+        Artist("Rage Against The Machine", arrayListOf(
             genres?.first { g -> g.name == "Fusion" }
         ), null),
         Artist("Tool", arrayListOf(
@@ -72,7 +73,7 @@ class MainActivity : AppCompatActivity() {
         Artist("Sepultura", arrayListOf(
             genres?.first { g -> g.name == "Groove Metal" },
             genres?.first { g -> g.name == "Metal" },
-            genres?.first { g -> g.name == "Thrash metal" }
+            genres?.first { g -> g.name == "Thrash Metal" }
         ), null),
         Artist("Iron Maiden", arrayListOf(
             genres?.first { g -> g.name == "Heavy Metal" },
