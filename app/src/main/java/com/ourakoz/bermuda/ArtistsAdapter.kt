@@ -16,11 +16,12 @@ class ArtistsAdapter(val artists: Array<Artist>, val context: Context) : Recycle
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder?.tvArtistType?.text = artists.elementAt(position).name
-        holder?.tvArtistsClick?.setOnClickListener({ v ->
+        holder?.tvArtistGenres?.text = artists.elementAt(position).genres.map { g -> g.name }.joinToString(" • ")
+        holder?.tvArtistsClick?.setOnClickListener { v ->
             run {
                 artists.first { a -> a.name == holder?.tvArtistType?.text }.toggleFavorite(holder?.tvArtistFav)
             }
-        })
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,10 +31,10 @@ class ArtistsAdapter(val artists: Array<Artist>, val context: Context) : Recycle
     fun Artist.toggleFavorite(iv: ImageView) {
         if (this.dateFavorite == null ) {
             this.dateFavorite = LocalDateTime.now()
-            iv.setImageResource(R.drawable.star_empty)
+            iv.setImageResource(R.drawable.star_full)
         } else {
             this.dateFavorite = null
-            iv.setImageResource(R.drawable.star_full)
+            iv.setImageResource(R.drawable.star_empty)
         }
     }
 }
@@ -41,6 +42,7 @@ class ArtistsAdapter(val artists: Array<Artist>, val context: Context) : Recycle
 class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
     // Holds the TextView that will add each animal to
     val tvArtistType = view.artist_name
+    val tvArtistGenres = view.artist_genres
     val tvArtistFav = view.fav
     val tvArtistsClick = view.clickable
 }

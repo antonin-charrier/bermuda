@@ -3,6 +3,7 @@ package com.ourakoz.bermuda
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_suggestions.*
 
@@ -18,7 +19,6 @@ class SuggestionsActivity : AppCompatActivity() {
 
         rv_suggestions.layoutManager = LinearLayoutManager(this)
         rv_suggestions.adapter = ArtistsAdapter(suggestionsList, this)
-
     }
 
     fun refreshSuggestions() {
